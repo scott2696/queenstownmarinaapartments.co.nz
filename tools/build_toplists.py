@@ -18,8 +18,12 @@ captain-cooks-alternatives luxury-casino-alternatives spin-casino-alternatives
 zodiac-casino-alternatives""".split()
 CRYPTO_PAGES = """crypto-casinos crypto-casinos/bitcoin crypto-casinos/ethereum
 crypto-casinos/no-kyc""".split()
-# Sports intentionally unmapped - see MIGRATION.md.
-SPORTS_PAGES = []
+SPORTS_PAGES = ['sports-betting', 'sports-betting/tab-review']
+
+SPORTS_HEADING = 'Top Sports Betting Sites for NZ Players'
+SPORTS_INTRO = ('<strong>We may earn a commission</strong> from the operators below; '
+                'offer specifics are not yet confirmed, so verify current terms on each '
+                'site. See our <a href="/review-methodology/">review methodology</a>.')
 
 DEFAULT_OFFER = "Visit site for current offer"
 
@@ -30,10 +34,14 @@ def held(op, cat):
 
 
 def link_for(op, cat):
-    if cat == 'casino':
-        return op['casinoLink']
+    """Preferred link for the category, falling back to the other.
+
+    Most operators in this lineup use one URL for both casino and betting,
+    so a missing column is filled from its counterpart rather than dropping
+    the operator. See the per-operator 'note' fields in operators.json.
+    """
     if cat == 'sports':
-        return op['bettingLink']
+        return op['bettingLink'] or op['casinoLink']
     return op['casinoLink'] or op['bettingLink']
 
 
@@ -102,6 +110,17 @@ def rewrite(page, cat):
     count = len(spans)
     for s, e, open_tag in reversed(spans):   # back-to-front keeps indices valid
         html = html[:s] + open_tag + cards + '</div>' + html[e:]
+
+    if not spans and cat == 'sports':
+        # these pages have no toplist container; insert one after the answer box
+        m = re.search(r'<div class="answer-box">', html)
+        if m:
+            sp = block_span(html, m.start())
+            if sp:
+                section = (f'\n<h2>{SPORTS_HEADING}</h2>\n<p>{SPORTS_INTRO}</p>\n'
+                           f'<div class="toplist" id="toplist">{cards}</div>\n')
+                html = html[:sp[1]] + section + html[sp[1]:]
+                count = 1
 
     # the placeholder disclaimer is no longer true once real links ship
     html = re.sub(
