@@ -158,12 +158,26 @@
    "crypto": true,
    "casinoLink": "",
    "bettingLink": "https://roosterpartner.media/aazsy7czse",
-   "offer": "",
+   "offer": "Up to NZ$5,000 + 300 FS",
    "rating": null,
    "hold": null,
    "note": "Casino=TRUE with no casino link; falls back to the betting link, matching the shared-link pattern used by Lucky Vibe, Fortune Play, Roby and others.",
    "logo": "rooster-bet.png",
-   "offerSource": "11woodward.co.nz research, NZ-targeted; re-verify before launch"
+   "offerSource": "competitor research (whollysmoked.co.nz), NZ-targeted; VERIFY with affiliate manager",
+   "wagering": "40×",
+   "minDeposit": "NZ$20",
+   "body": "Rooster Bet spreads its welcome across four deposits, each needing its own code (ROOSTER1-4), for a headline package of NZ$5,000 and 300 free spins. Balances are held in NZD and six cryptocurrencies are supported.",
+   "pros": [
+    "NZD balances",
+    "Four-stage welcome package",
+    "Crypto supported alongside NZD",
+    "Casino and sportsbook on one account"
+   ],
+   "cons": [
+    "40× wagering across all four stages",
+    "Each stage needs its own promo code",
+    "Offshore licence only"
+   ]
   },
   {
    "name": "Fortune Play",
@@ -173,12 +187,26 @@
    "crypto": true,
    "casinoLink": "https://mediaroosters.com/aaud6h1mdk",
    "bettingLink": "https://mediaroosters.com/aaud6h1mdk",
-   "offer": "",
+   "offer": "Up to NZ$5,000 + 300 FS",
    "rating": null,
    "hold": null,
    "note": null,
    "logo": "fortune-play.png",
-   "offerSource": "11woodward.co.nz research, NZ-targeted; re-verify before launch"
+   "offerSource": "competitor research (nz-casino.online), NZ-targeted; VERIFY with affiliate manager",
+   "wagering": "40×",
+   "minDeposit": "NZ$30",
+   "body": "Fortune Play runs a four-deposit welcome package worth up to NZ$5,000 and 300 free spins, in NZD. Wagering is 40× with slots contributing full weight, and the clock on it is short.",
+   "pros": [
+    "NZD balances",
+    "Four-stage welcome package",
+    "Slots contribute 100% to wagering",
+    "Crypto accepted from 5 USDT"
+   ],
+   "cons": [
+    "Wagering must clear within 3 days",
+    "Roulette and poker contribute only 5%",
+    "Offshore licence only"
+   ]
   },
   {
    "name": "MadCasino",
