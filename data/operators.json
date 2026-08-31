@@ -105,12 +105,12 @@
    "casino": true,
    "sports": true,
    "crypto": true,
-   "casinoLink": "https://go.afftrackio.com/visit/bta=36498&nci5354",
-   "bettingLink": "https://go.afftrackio.com/visit/bta=36498&nci5354",
+   "casinoLink": "https://go.afftrackio.com/visit/?bta=36498&nci=5354&utm_campaign=woodward",
+   "bettingLink": "https://go.afftrackio.com/visit/?bta=36498&nci=5354&utm_campaign=woodward",
    "offer": "",
    "rating": null,
    "hold": null,
-   "note": "URL AS SUPPLIED IS MALFORMED - missing '?' before bta and '=' in nci. Published verbatim on request; will not track until corrected to /visit/?bta=36498&nci=5354.",
+   "note": "Interim link supplied 2026-08-31; note utm_campaign=woodward while Kingdom/Smash/Rivo use chrischem.",
    "logo": "madcasino.png"
   },
   {
