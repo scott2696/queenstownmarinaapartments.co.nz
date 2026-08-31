@@ -238,6 +238,78 @@ def rebuild_hero(page, cat):
     return 1
 
 
+
+RANK_BADGE = ["Editor's #1 Pick", '#2 Pick', '#3 Pick', '#4 Pick', '#5 Pick']
+
+
+def review_card(op, url, rank):
+    """Operator review card.
+
+    Deliberately carries no welcome-offer, licence, min-deposit, games or
+    pros/cons detail: none of that has been supplied for this lineup, and
+    those are checkable factual claims a reader would act on financially.
+    Restore review-highlights / review-pros-cons here once real data exists.
+    """
+    name = op['name'].replace('&', '&amp;')
+    href = url.replace('&', '&amp;')
+    if op.get('logo'):
+        # header is a dark gradient; these logos are dark artwork, so the
+        # mark sits on its own white tile
+        logo = (f'<span style="display:inline-flex;align-items:center;'
+                f'justify-content:center;background:#fff;border-radius:8px;'
+                f'width:76px;height:44px;padding:5px;flex-shrink:0">'
+                f'<img src="/logos/{op["logo"]}" alt="{name} logo" loading="lazy" '
+                f'style="width:100%;height:100%;object-fit:contain"></span>')
+    else:
+        logo = ''
+    badge = RANK_BADGE[rank - 1] if rank <= len(RANK_BADGE) else f'#{rank} Pick'
+    return (
+        '<div class="review-card">'
+        '<div class="review-header"><div class="review-header-left">'
+        f'{logo}<h3>{name} Review</h3>'
+        f'<span class="review-badge">{badge}</span>'
+        '</div>'
+        f'<a href="{href}" class="btn-claim" rel="nofollow sponsored noopener" '
+        f'target="_blank">Visit {name}</a>'
+        '</div>'
+        '<div class="review-body">'
+        f'<p>{name} is part of our current New Zealand lineup. Our full '
+        'assessment &mdash; welcome offer, licensing, banking and game range '
+        '&mdash; is not published yet, so we make no claims about its terms '
+        "here. Check the operator's site for current details before you "
+        'deposit.</p>'
+        '</div></div>')
+
+
+def rebuild_reviews(page, cat):
+    """Replace operator review cards with the lineup's top operators.
+
+    Author bios on /authors/ reuse .review-card but have no .review-header,
+    so they are skipped.
+    """
+    path = ROOT / (page if page.endswith('.html') else f'{page}/index.html')
+    if not path.exists():
+        return 0
+    html = path.read_text(encoding='utf-8')
+
+    spans = []
+    for m in re.finditer(r'<div class="review-card">', html):
+        sp = block_span(html, m.start())
+        if sp and '<div class="review-header">' in html[sp[0]:sp[1]]:
+            spans.append(sp)
+    if not spans:
+        return 0
+
+    ops = lineup(cat)[:len(spans)]
+    if len(ops) < len(spans):
+        return 0
+    cards = [review_card(op, u, i) for i, (op, u) in enumerate(ops, 1)]
+    for (s, e), card in zip(reversed(spans), reversed(cards)):
+        html = html[:s] + card + html[e:]
+    path.write_text(html, encoding='utf-8')
+    return len(spans)
+
+
 def main():
     total = 0
     for pages, cat in ((CASINO_PAGES, 'casino'), (CRYPTO_PAGES, 'crypto'), (SPORTS_PAGES, 'sports')):
@@ -253,6 +325,12 @@ def main():
         for pg in pages:
             heroes += rebuild_hero(pg, cat)
     print(f'hero #1-pick cards: {heroes}')
+    revs = 0
+    for pages, cat in ((CASINO_PAGES, 'casino'), (CRYPTO_PAGES, 'crypto'),
+                       (SPORTS_PAGES, 'sports')):
+        for pg in pages:
+            revs += rebuild_reviews(pg, cat)
+    print(f'review cards rebuilt: {revs}')
 
     print('\nHELD BACK (needs your input):')
     for op in DATA:
