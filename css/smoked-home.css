@@ -324,7 +324,9 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--head); color: var(--text); letter-sp
   .toplist-badge { left: 50%; transform: translateX(-50%); }
   .toplist-cta, .btn-play { width: 100%; }
   .review-pros-cons { grid-template-columns: 1fr; }
-  .review-header { flex-direction: column; text-align: center; }
+  .review-header { flex-direction: column; align-items: center; text-align: center; }
+  /* stack logo, title and badge each on their own centred line, then the CTA */
+  .review-header-left { flex-direction: column; align-items: center; gap: .6rem; }
   .stats-bar-inner { gap: .5rem; }
   .stat-number { font-size: 1.1rem; }
   .shell-footer-grid { grid-template-columns: 1fr; gap: 2rem; }
