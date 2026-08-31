@@ -171,6 +171,73 @@ def rebuild_itemlist(page='index.html', cat='casino'):
     return len(items)
 
 
+
+PICK_LABEL = {'casino': 'Top Rated for NZ',
+              'crypto': 'Top Crypto Pick for NZ',
+              'sports': 'Top Sports Pick for NZ'}
+
+
+def hero_card(op, url, cat):
+    """The 'Editor's #1 Pick' hero card for a page's top operator."""
+    name = op['name'].replace('&', '&amp;')
+    href = url.replace('&', '&amp;')
+    if op.get('logo'):
+        # the mark tile is dark navy by default; our logos are dark artwork,
+        # so the tile is overridden to white here or they would not read
+        # tile is 48x48 by default, but most of these marks are wide wordmarks
+        # (Spinjo is 3.2:1) which object-fit would shrink to a sliver, so the
+        # tile is widened and the dark navy swapped for white
+        mark = (f'<span class="hero-featured-mark" style="background:#fff;padding:6px;'
+                f'width:96px;height:52px;border-radius:10px;flex-shrink:0">'
+                f'<img src="/logos/{op["logo"]}" alt="{name} logo" loading="lazy" '
+                f'style="width:100%;height:100%;object-fit:contain"></span>')
+    else:
+        mark = '<span class="hero-featured-mark">&#9733;</span>'
+    return (
+        '<div class="hero-featured">'
+        '<div class="hero-featured-band">Editor\'s #1 Pick</div>'
+        '<div class="hero-featured-body">'
+        f'<div class="hero-featured-head">{mark}<div>'
+        f'<p class="hero-featured-name">{name}</p>'
+        f'<p class="hero-featured-pick">{PICK_LABEL[cat]}</p>'
+        '</div></div>'
+        '<p class="hero-featured-detail">Offer terms are not yet confirmed &mdash; '
+        'check the current offer on site.</p>'
+        f'<a href="{href}" class="btn-primary" style="display:block;text-align:center" '
+        f'rel="nofollow sponsored noopener" target="_blank">Play at {name} &rarr;</a>'
+        '<p class="hero-featured-fine">18+ &middot; T&amp;Cs apply &middot; '
+        'verify current offer</p>'
+        '</div></div>')
+
+
+def rebuild_hero(page, cat):
+    """Swap the hero card for the page's #1 operator.
+
+    Only applied to pages that carry a toplist - the legal and utility pages
+    (privacy, terms, cookies, responsible-gambling, ...) keep their
+    'Kiwi Player Essentials' card deliberately.
+    """
+    path = ROOT / (page if page.endswith('.html') else f'{page}/index.html')
+    if not path.exists():
+        return 0
+    html = path.read_text(encoding='utf-8')
+    if '<div class="toplist"' not in html:
+        return 0
+    ops = lineup(cat)
+    if not ops:
+        return 0
+    op, url = ops[0]
+    m = re.search(r'<div class="hero-featured">', html)
+    if not m:
+        return 0
+    sp = block_span(html, m.start())
+    if not sp:
+        return 0
+    html = html[:sp[0]] + hero_card(op, url, cat) + html[sp[1]:]
+    path.write_text(html, encoding='utf-8')
+    return 1
+
+
 def main():
     total = 0
     for pages, cat in ((CASINO_PAGES, 'casino'), (CRYPTO_PAGES, 'crypto'), (SPORTS_PAGES, 'sports')):
@@ -180,6 +247,12 @@ def main():
             total += rewrite(p, cat)
     print(f'\nrebuilt {total} toplist blocks')
     print(f'ItemList structured data: {rebuild_itemlist()} items')
+    heroes = 0
+    for pages, cat in ((CASINO_PAGES, 'casino'), (CRYPTO_PAGES, 'crypto'),
+                       (SPORTS_PAGES, 'sports')):
+        for pg in pages:
+            heroes += rebuild_hero(pg, cat)
+    print(f'hero #1-pick cards: {heroes}')
 
     print('\nHELD BACK (needs your input):')
     for op in DATA:
