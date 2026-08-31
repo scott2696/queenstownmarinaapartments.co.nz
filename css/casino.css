@@ -1,0 +1,2169 @@
+/* ═══════════════════════════════════════════════════════════
+   Casino Page Styles - $1 Deposit Casino NZ
+   Extends the base Orchard Street theme
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Hero Banner ───────────────────────────────────────── */
+.hero-banner {
+    background: #1e2a4a;
+    padding: 50px 0;
+    margin-top: 0;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-image {
+    flex-shrink: 0;
+}
+
+.hero-image img {
+    width: 260px;
+    height: auto;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.2));
+}
+
+.hero-picks-section {
+    background: linear-gradient(180deg, #f8f9fa 0%, #eef1f6 100%);
+    padding: 50px 0;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 38px;
+    color: #fff;
+    margin: 0 0 12px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    margin: 14px 0 0;
+    line-height: 1.5;
+}
+
+.hero-picks {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.hero-pick-card {
+    flex: 0 0 220px;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f4ff 100%);
+    border-radius: 14px;
+    padding: 24px 28px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #e0e7ff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-pick-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+
+.hero-pick-card.pick-featured {
+    flex: 0 0 260px;
+    background: linear-gradient(180deg, #1e2a4a 0%, #2d3a5c 100%);
+    transform: scale(1.06);
+    box-shadow: 0 14px 45px rgba(30,42,74,0.35);
+    border: 3px solid #f97316;
+    z-index: 2;
+}
+
+.hero-pick-card.pick-featured:hover {
+    transform: scale(1.06) translateY(-4px);
+    box-shadow: 0 18px 50px rgba(30,42,74,0.4);
+}
+
+.pick-featured .pick-award,
+.pick-featured .pick-bonus,
+.pick-featured .pick-disclaimer {
+    color: rgba(255,255,255,0.75);
+}
+
+.pick-featured .pick-bonus {
+    color: #fff;
+}
+
+.pick-featured .pick-disclaimer a {
+    color: rgba(255,255,255,0.6);
+}
+
+.pick-featured {
+    position: relative;
+    margin-top: 18px;
+}
+
+.pick-top-banner {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    padding: 6px 18px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 3px 12px rgba(29,78,216,0.35);
+    z-index: 3;
+}
+
+.pick-rank-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(29,78,216,0.3);
+}
+
+.pick-badge {
+    display: inline-block;
+    background: #f97316;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.pick-logo {
+    margin-bottom: 14px;
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 14px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pick-featured .pick-logo {
+    background: rgba(255,255,255,0.95);
+    padding: 16px 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.pick-logo img {
+    max-width: 120px;
+    max-height: 50px;
+    object-fit: contain;
+    border: none;
+    padding: 0;
+}
+
+.pick-featured .pick-logo img {
+    max-width: 140px;
+    max-height: 55px;
+}
+
+.pick-name {
+    display: none;
+}
+
+.pick-name:hover {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.pick-award {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 14px;
+}
+
+.pick-bonus {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 18px;
+}
+
+.pick-bonus-icon {
+    margin-right: 4px;
+}
+
+.pick-cta {
+    display: block;
+    background: #1d4ed8;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: background 0.2s ease;
+}
+
+.pick-cta:hover {
+    background: #1d4ed8;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pick-disclaimer {
+    font-size: 11px;
+    color: #9ca3af;
+    margin: 0;
+}
+
+.pick-disclaimer a {
+    color: #9ca3af;
+    text-decoration: underline;
+}
+
+.pick-disclaimer a:hover {
+    color: #6b7280;
+}
+
+.hero-author-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-author-avatar {
+    border-radius: 50%;
+    border: 2px solid #1d4ed8;
+    object-fit: cover;
+}
+
+.hero-author-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero-author-name:hover {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.hero-author-role {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+}
+
+.hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.hero-meta-item {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+}
+
+.hero-meta-item .fa {
+    margin-right: 5px;
+    color: rgba(255,255,255,0.35);
+}
+
+.hero-meta-divider {
+    color: rgba(255,255,255,0.25);
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    /* ── Hero ── */
+    .hero-banner {
+        padding: 20px 14px 24px;
+        margin-top: 0;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+        padding: 0;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    .hero-text {
+        padding: 0;
+    }
+
+    .hero-title {
+        font-size: 20px;
+        margin-bottom: 4px;
+        line-height: 1.25;
+    }
+
+    .hero-subtitle {
+        font-size: 12px;
+        color: rgba(255,255,255,0.6);
+        margin: 0;
+    }
+
+    .hero-author-line {
+        justify-content: center;
+        gap: 6px;
+        margin-top: 8px;
+        font-size: 11px;
+    }
+
+    .hero-author-avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hero-author-name {
+        font-size: 12px;
+    }
+
+    .hero-author-role {
+        font-size: 9px;
+    }
+
+    .hero-meta {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 6px;
+    }
+
+    .hero-meta-item {
+        font-size: 11px;
+    }
+
+    .hero-meta-divider {
+        font-size: 10px;
+    }
+
+    /* ── Pick cards ── */
+    .hero-picks {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 8px;
+    }
+
+    .hero-pick-card {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+        padding: 16px 18px;
+        border-radius: 12px;
+    }
+
+    .hero-pick-card.pick-featured {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+        transform: none;
+        order: -1;
+    }
+
+    .pick-badge {
+        font-size: 10px;
+        padding: 3px 10px;
+        margin-bottom: 10px;
+    }
+
+    .pick-logo {
+        margin-bottom: 10px;
+        padding: 10px 16px;
+    }
+
+    .pick-logo img {
+        max-width: 100px;
+        max-height: 40px;
+    }
+
+    .pick-name {
+        display: none;
+    }
+
+    .pick-award {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    .pick-bonus {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .pick-cta {
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 16px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    .pick-disclaimer {
+        font-size: 10px;
+    }
+}
+
+/* ─── Content Layout (main + sidebar) ───────────────────── */
+.content-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.content-layout .entry-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.sidebar-sticky {
+    flex: 0 0 280px;
+    position: sticky;
+    top: 80px;
+    align-self: flex-start;
+}
+
+.sidebar-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 16px;
+}
+
+.sidebar-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #374151;
+    letter-spacing: 0.5px;
+    margin: 0 0 16px;
+}
+
+.sidebar-stats {
+    display: flex;
+    gap: 8px;
+}
+
+.stat-box {
+    flex: 1;
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+.stat-box-highlight {
+    background: #1e2a4a;
+    color: #fff;
+}
+
+.stat-box-highlight .stat-value,
+.stat-box-highlight .stat-label {
+    color: #fff;
+}
+
+.stat-value {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #1e2a4a;
+    line-height: 1.2;
+}
+
+.stat-label {
+    display: block;
+    font-size: 10px;
+    color: #6b7280;
+    margin-top: 4px;
+    line-height: 1.2;
+}
+
+.sidebar-trust-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-trust-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #374151;
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.sidebar-trust-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.sidebar-trust-list li:first-child {
+    padding-top: 0;
+}
+
+.trust-icon {
+    font-size: 16px;
+    flex: 0 0 20px;
+    text-align: center;
+}
+
+.sidebar-trust-list a {
+    color: #374151;
+    text-decoration: none;
+}
+
+.sidebar-trust-list a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+    .content-layout {
+        flex-direction: column;
+    }
+
+    .sidebar-sticky {
+        flex: none;
+        width: 100%;
+        position: static;
+        display: flex;
+        gap: 12px;
+    }
+
+    .sidebar-card {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-sticky {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .sidebar-card {
+        margin-bottom: 0;
+    }
+}
+
+/* ─── Casino Page Layout (toplist above the fold) ────────── */
+.casino-page .content-area {
+    padding: 20px 0 50px;
+}
+
+.casino-page .page-title {
+    font-size: 28px;
+    margin-bottom: 8px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.casino-page .intro-blurb {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.casino-page .toplist-heading {
+    font-size: 20px;
+    color: #1d4ed8;
+    margin: 0 0 4px;
+    padding: 0;
+}
+
+.casino-page .toplist-intro {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.casino-page .author-byline {
+    margin-bottom: 10px;
+}
+
+.casino-page .toplist-table {
+    margin: 8px 0 30px;
+}
+
+@media (max-width: 768px) {
+    .casino-page .content-area {
+        padding: 12px 0 30px;
+    }
+
+    .casino-page .page-title {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .casino-page .author-byline {
+        margin-bottom: 6px;
+        gap: 8px;
+    }
+
+    .casino-page .author-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .casino-page .author-name {
+        font-size: 13px;
+    }
+
+    .casino-page .author-role {
+        font-size: 10px;
+    }
+
+    .casino-page .intro-blurb {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .casino-page .toplist-heading {
+        font-size: 17px;
+        margin: 0 0 3px;
+    }
+
+    .casino-page .toplist-intro {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .casino-page .toplist-table {
+        margin: 4px 0 20px;
+    }
+}
+
+/* ─── Author Byline ──────────────────────────────────────── */
+.author-byline,
+.author-byline-small {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.author-byline-small {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.author-avatar {
+    border-radius: 50%;
+    border: 2px solid #1d4ed8;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.author-name:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.author-byline-small .author-name {
+    font-size: 13px;
+}
+
+.author-role {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ─── Toplist Table ──────────────────────────────────────── */
+.toplist-table {
+    margin: 30px 0 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e2e2;
+}
+
+.toplist-table-header {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    background: #f5f6f8;
+    border-bottom: 1px solid #e2e2e2;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.th-rank { flex: 0 0 55px; text-align: center; }
+.th-casino { flex: 1; min-width: 180px; }
+.th-rating { flex: 0 0 80px; text-align: center; }
+.th-bonus { flex: 0 0 220px; }
+.th-cta { flex: 0 0 155px; }
+
+.toplist-row {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s ease;
+}
+
+.toplist-row:last-child {
+    border-bottom: none;
+}
+
+.toplist-row:hover {
+    background: #fafbfc;
+}
+
+.row-rank {
+    flex: 0 0 55px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: #374151;
+    background: #f0f1f3;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-casino {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.row-casino > a {
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-casino .row-casino-name img,
+.row-casino > a img {
+    max-width: 120px;
+    max-height: 40px;
+    width: auto;
+    height: 40px;
+    object-fit: contain;
+    border: none;
+    border-radius: 0;
+}
+
+/* Rooster.bet logo is square — needs more height to be legible */
+.row-casino > a img[alt="Rooster.bet"],
+.row-casino .row-casino-name img[alt="Rooster.bet"] {
+    height: 56px;
+    max-height: 56px;
+    max-width: 56px;
+    width: 56px;
+}
+
+.row-casino-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-casino-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #111;
+    text-decoration: none;
+    line-height: 1.3;
+}
+
+.row-casino-name:hover {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.row-casino-award {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.row-rating {
+    flex: 0 0 80px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #374151;
+}
+
+.row-rating .star {
+    color: #f59e0b;
+    font-size: 16px;
+    margin-right: 3px;
+}
+
+.row-bonus {
+    flex: 0 0 220px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.row-cta {
+    flex: 0 0 155px;
+    text-align: center;
+}
+
+.btn-claim {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #2d3a5c;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.btn-claim:hover {
+    background: #1e2a48;
+    color: #fff;
+    text-decoration: none;
+}
+
+.row-tc {
+    display: block;
+    font-size: 10px;
+    color: #9ca3af;
+    text-decoration: none;
+    margin-top: 6px;
+    letter-spacing: 0.2px;
+}
+
+.row-tc:hover {
+    color: #6b7280;
+    text-decoration: underline;
+}
+
+/* ─── Toplist Table Mobile ──────────────────────────────── */
+@media (max-width: 768px) {
+    .toplist-table {
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        overflow: hidden;
+    }
+
+    .toplist-table-header {
+        display: none;
+    }
+
+    .toplist-row {
+        display: block;
+        padding: 14px 12px 12px;
+        margin: 0 0 10px 0;
+        border: 1px solid #e2e5ea;
+        border-radius: 10px;
+        background: #fff;
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .toplist-row:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Top line: rank + logo + name + rating all inline */
+    .row-rank {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+        font-weight: 800;
+        background: #f0f1f3;
+        color: #374151;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 6px;
+        flex-shrink: 0;
+    }
+
+    .row-casino {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+        vertical-align: middle;
+        max-width: calc(100% - 80px);
+    }
+
+    .row-casino > a {
+        flex: 0 0 36px;
+    }
+
+    .row-casino .row-casino-name img,
+    .row-casino > a img {
+        max-width: 90px;
+        max-height: 32px;
+        width: auto;
+        height: 32px;
+        object-fit: contain;
+        border: none;
+        border-radius: 0;
+    }
+
+    .row-casino > a img[alt="Rooster.bet"],
+    .row-casino .row-casino-name img[alt="Rooster.bet"] {
+        height: 44px;
+        max-height: 44px;
+        max-width: 44px;
+        width: 44px;
+    }
+
+    .row-casino img {
+        max-width: 36px;
+        max-height: 28px;
+        border-radius: 5px;
+        border: 1px solid #eee;
+    }
+
+    .row-casino-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .row-casino-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: #111;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .row-casino-award {
+        font-size: 10px;
+        color: #6b7280;
+        display: block;
+        margin-top: 1px;
+    }
+
+    /* Rating - floated right on first line */
+    .row-rating {
+        float: right;
+        font-size: 13px;
+        font-weight: 700;
+        margin-top: 4px;
+    }
+
+    .row-rating .star {
+        font-size: 13px;
+    }
+
+    /* Bonus */
+    .row-bonus {
+        clear: both;
+        font-size: 13px;
+        font-weight: 600;
+        color: #1e2a4a;
+        padding: 10px 0;
+    }
+
+    .row-bonus::before {
+        content: "\1F4B0 ";
+    }
+
+    /* CTA */
+    .row-cta {
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .toplist-row .btn-claim {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 11px 12px;
+        font-size: 13px;
+        font-weight: 700;
+        border-radius: 8px;
+        background: #2d3a5c;
+        color: #fff;
+        white-space: normal;
+    }
+
+    .row-tc {
+        display: block;
+        text-align: center;
+        font-size: 9px;
+        margin-top: 6px;
+    }
+}
+
+/* ─── Casino Review Cards ────────────────────────────────── */
+.casino-review {
+    margin: 40px 0;
+    padding: 30px;
+    background: #fafafa;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.casino-review h3 {
+    color: #1d4ed8;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+/* ─── Review Card Header ─────────────────────────────────── */
+.review-card-header {
+    background: #fff;
+    border: 1px solid #e2e5ea;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.rch-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.rch-top-cta {
+    margin-left: auto;
+}
+
+.rch-top-cta .btn-claim-orange {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #e87b35;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.rch-top-cta .btn-claim-orange:hover {
+    background: #d06a28;
+    color: #fff;
+    text-decoration: none;
+}
+
+.rch-rank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #2d3a5c;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.rch-name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.rch-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.rch-badge {
+    display: inline-block;
+    background: #f0e68c;
+    color: #5a4e00;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rch-middle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.rch-logo {
+    flex: 0 0 70px;
+    text-align: center;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.rch-logo img {
+    max-width: 55px;
+    max-height: 40px;
+    object-fit: contain;
+    border: none;
+    padding: 0;
+}
+
+.rch-info {
+    flex: 1;
+}
+
+.rch-award {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0 0 8px;
+}
+
+.rch-tag {
+    display: inline-block;
+    font-size: 11px;
+    color: #374151;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+}
+
+.rch-rating {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.rch-score {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: #2563eb;
+    line-height: 1;
+}
+
+.rch-out-of {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #9ca3af;
+}
+
+.rch-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #f0f0f0;
+    margin-bottom: 14px;
+}
+
+.rch-detail {
+    font-size: 13px;
+    color: #374151;
+    white-space: nowrap;
+}
+
+.rch-detail .fa {
+    color: #1d4ed8;
+    margin-right: 5px;
+}
+
+.rch-terms {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.rch-terms:hover {
+    text-decoration: underline;
+}
+
+.rch-terms .fa {
+    color: #1d4ed8;
+}
+
+.rch-cta {
+    display: none;
+}
+
+/* Rating progress bars */
+.rch-bars {
+    padding-top: 14px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.rch-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+}
+
+.rch-bar-label {
+    flex: 0 0 75px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.rch-bar-track {
+    flex: 1;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.rch-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    transition: width 0.5s ease;
+}
+
+.rch-bar-value {
+    flex: 0 0 30px;
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #374151;
+}
+
+@media (max-width: 768px) {
+    .review-card-header {
+        padding: 14px 12px;
+    }
+
+    .rch-top {
+        flex-wrap: wrap;
+    }
+
+    .rch-name {
+        font-size: 15px;
+    }
+
+    .rch-badge {
+        font-size: 9px;
+        padding: 2px 7px;
+    }
+
+    .rch-top-cta {
+        flex: 1 1 100%;
+        margin-left: 0;
+        margin-top: 6px;
+    }
+
+    .rch-top-cta .btn-claim-orange {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .rch-middle {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .rch-logo {
+        flex: 0 0 55px;
+        padding: 6px;
+    }
+
+    .rch-logo img {
+        max-width: 42px;
+        max-height: 32px;
+    }
+
+    .rch-award {
+        font-size: 11px;
+    }
+
+    .rch-tag {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+
+    .rch-score {
+        font-size: 28px;
+    }
+
+    .rch-out-of {
+        font-size: 13px;
+    }
+
+    .rch-bottom {
+        gap: 8px 14px;
+    }
+
+    .rch-detail {
+        font-size: 12px;
+    }
+
+    .rch-cta .btn-cta {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 11px 16px;
+        font-size: 13px;
+    }
+}
+
+.review-pros-cons {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.pros, .cons {
+    flex: 1;
+    min-width: 200px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.pros {
+    background: rgba(140,181,63,0.08);
+    border: 1px solid rgba(140,181,63,0.2);
+}
+
+.cons {
+    background: rgba(216,37,39,0.05);
+    border: 1px solid rgba(216,37,39,0.15);
+}
+
+.pros h4 {
+    color: #8CB53F;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.cons h4 {
+    color: #D82527;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pros li::before {
+    content: "\f00c";
+    font-family: 'FontAwesome';
+    color: #8CB53F;
+    margin-right: 8px;
+}
+
+.cons li::before {
+    content: "\f00d";
+    font-family: 'FontAwesome';
+    color: #D82527;
+    margin-right: 8px;
+}
+
+.pros li, .cons li {
+    font-size: 14px;
+    padding: 4px 0;
+}
+
+.review-ratings ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.review-ratings li {
+    padding: 8px 15px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.casino-review blockquote {
+    background: #fff;
+    border-left: 4px solid #1d4ed8;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    font-size: 16px;
+    color: #333;
+}
+
+.casino-review blockquote p {
+    margin-bottom: 10px;
+}
+
+.review-cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.review-cta .btn-cta {
+    padding: 14px 40px;
+    font-size: 15px;
+}
+
+/* ─── FAQ Section ────────────────────────────────────────── */
+.faq-section {
+    margin: 20px 0;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.faq-item h3 {
+    font-size: 18px;
+    color: #1d4ed8;
+    margin-bottom: 10px;
+}
+
+/* ─── Responsible Gambling ───────────────────────────────── */
+.responsible-gambling {
+    margin-top: 40px;
+    padding: 30px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.responsible-gambling h2 {
+    color: #D82527;
+}
+
+.age-badge {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: #D82527;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* ─── Signup Steps ───────────────────────────────────────── */
+.signup-steps li {
+    padding: 10px 0;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ─── Author Profile Page ────────────────────────────────── */
+.author-profile {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+
+.author-photo img {
+    border-radius: 50%;
+    border: 4px solid #1d4ed8;
+    object-fit: cover;
+}
+
+.author-details {
+    flex: 1;
+    min-width: 280px;
+}
+
+.author-role-large {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1d4ed8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.author-location {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.author-location .fa {
+    color: #1d4ed8;
+    margin-right: 5px;
+}
+
+.author-bio p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* ─── Tables ─────────────────────────────────────────────── */
+.table-responsive {
+    margin: 20px 0 30px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+    /* Global mobile containment */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .content-area {
+        padding: 10px 0 24px;
+    }
+
+    .content-area .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow-x: hidden;
+    }
+
+    .entry-content {
+        overflow-x: hidden;
+        word-wrap: break-word;
+    }
+
+    /* Kill all desktop min-widths */
+    .toplist-info,
+    .row-casino,
+    .th-casino,
+    .pros, .cons,
+    .author-details,
+    .review-quick-stats,
+    .review-logo,
+    .review-header,
+    img {
+        min-width: 0 !important;
+    }
+
+    h2 {
+        font-size: 17px;
+        word-wrap: break-word;
+    }
+
+    p, li {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* Reviews - card boxes */
+    .casino-review {
+        padding: 14px 12px;
+        margin: 12px 0;
+        overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid #e2e5ea;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .casino-review h3 {
+        font-size: 15px;
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+
+    .review-pros-cons {
+        flex-direction: column;
+        gap: 8px;
+        margin: 10px 0;
+    }
+
+    .pros, .cons {
+        padding: 10px;
+        min-width: 0;
+    }
+
+    .pros h4, .cons h4 {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .pros li, .cons li {
+        font-size: 12px;
+        padding: 2px 0;
+    }
+
+    .review-ratings ul {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .review-ratings li {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .review-cta {
+        text-align: center;
+        margin-top: 14px;
+    }
+
+    .review-cta .btn-cta {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 11px 12px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    .casino-review blockquote {
+        padding: 10px 12px;
+        font-size: 13px;
+        margin: 12px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .author-byline-small {
+        gap: 8px;
+    }
+
+    .author-byline-small .author-avatar {
+        width: 24px;
+        height: 24px;
+    }
+
+    .author-byline-small .author-name {
+        font-size: 11px;
+    }
+
+    .author-byline-small .author-role {
+        font-size: 9px;
+    }
+
+    /* Tables - horizontal scroll */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .table-responsive table {
+        min-width: 420px;
+        font-size: 11px;
+    }
+
+    .table-responsive th,
+    .table-responsive td {
+        padding: 6px 8px;
+    }
+
+    /* Sidebar mobile */
+    .sidebar-sticky .sidebar-card {
+        padding: 12px;
+    }
+
+    .sidebar-card-title {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .stat-value {
+        font-size: 13px;
+    }
+
+    .stat-label {
+        font-size: 8px;
+    }
+
+    .stat-box {
+        padding: 8px 4px;
+    }
+
+    .sidebar-trust-list li {
+        font-size: 11px;
+        gap: 6px;
+        padding: 6px 0;
+    }
+
+    .trust-icon {
+        font-size: 14px;
+    }
+
+    /* Responsible gambling box */
+    .responsible-gambling {
+        padding: 16px 12px;
+    }
+
+    .responsible-gambling h2 {
+        font-size: 17px;
+    }
+
+    .age-badge {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+    }
+
+    /* Author profile */
+    .author-profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .author-details {
+        min-width: 0;
+        width: 100%;
+    }
+
+    /* Read full review */
+    .read-full-review {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    /* Signup steps */
+    .signup-steps li {
+        font-size: 13px;
+        padding: 6px 0;
+    }
+
+    /* FAQ */
+    .faq-item {
+        padding: 10px;
+    }
+
+    .faq-item h3 {
+        font-size: 14px;
+    }
+
+    /* Toplist heading area */
+    .toplist-heading {
+        font-size: 16px !important;
+    }
+
+    .toplist-intro {
+        font-size: 11px !important;
+    }
+}
+
+/* ─── Read Full Review Toggle ─────────────────────────── */
+.read-full-review {
+    display: table;
+    margin: 12px auto 8px;
+    padding: 8px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e2a4a;
+    background: #f0f4f8;
+    border: 2px solid #d0d8e4;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.read-full-review:hover,
+.read-full-review:focus {
+    background: #e2e8f0;
+    border-color: #1e2a4a;
+    color: #1e2a4a;
+    text-decoration: none;
+}
+
+.read-full-review .rfr-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-left: 4px;
+}
+
+.read-full-review.active .rfr-arrow {
+    transform: rotate(180deg);
+}
+
+.review-expandable {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.review-expandable.expanded {
+    max-height: 5000px;
+}
+
+/* ─── Toplist (Pokies Page Variant) ────────────────────────── */
+.toplist-pokies .th-rank { flex: 0 0 36px; text-align: center; }
+.toplist-pokies .th-casino { flex: 0 0 140px; text-align: center; }
+.toplist-pokies .th-award { flex: 1; min-width: 110px; }
+.toplist-pokies .th-rating { flex: 0 0 60px; text-align: center; }
+.toplist-pokies .th-bonus { flex: 0 0 170px; padding-left: 20px; }
+.toplist-pokies .th-cta { flex: 0 0 170px; }
+
+.toplist-pokies .toplist-row {
+    padding: 26px 20px;
+}
+
+.toplist-pokies .row-rank {
+    flex: 0 0 36px;
+    font-size: 14px;
+    color: #fff;
+    background: #374151;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 20px;
+}
+
+.toplist-pokies .th-rank {
+    margin-right: 20px;
+}
+
+.toplist-pokies .row-casino {
+    flex: 0 0 140px;
+    min-width: 0;
+    gap: 0;
+    justify-content: center;
+}
+
+.toplist-pokies .row-award {
+    flex: 1;
+    min-width: 110px;
+    font-size: 13px;
+    color: #6b7280;
+    font-style: italic;
+    padding-left: 24px;
+}
+
+.toplist-pokies .th-award {
+    padding-left: 24px;
+}
+
+.toplist-pokies .row-casino .row-casino-name {
+    display: flex;
+    align-items: center;
+}
+
+.toplist-pokies .row-casino .row-casino-name img,
+.toplist-pokies .row-casino > a img {
+    max-width: 150px;
+    max-height: 75px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border: none;
+    border-radius: 0;
+}
+
+.toplist-pokies .row-casino .row-casino-name img[src*="roosterbet"],
+.toplist-pokies .row-casino > a img[alt="Rooster.bet"] {
+    max-width: 110px;
+    max-height: 110px;
+    width: auto;
+    height: auto;
+}
+
+.toplist-pokies .row-casino .row-casino-name:hover {
+    opacity: 0.85;
+}
+
+.toplist-pokies .row-rating {
+    flex: 0 0 60px;
+}
+
+.toplist-pokies .row-bonus {
+    flex: 0 0 170px;
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+.toplist-pokies .row-cta {
+    flex: 0 0 170px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.toplist-pokies .btn-claim {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.toplist-pokies .row-tc {
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .toplist-pokies .row-rank {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+        line-height: 24px;
+        flex: none;
+        position: static;
+        margin-right: 6px;
+    }
+    .toplist-pokies .row-casino {
+        flex: none;
+    }
+    .toplist-pokies .row-casino .row-casino-name img,
+    .toplist-pokies .row-casino > a img {
+        max-width: 110px;
+        max-height: 55px;
+        width: auto;
+        height: auto;
+    }
+    .toplist-pokies .row-casino .row-casino-name img[src*="roosterbet"],
+    .toplist-pokies .row-casino > a img[alt="Rooster.bet"] {
+        max-width: 80px;
+        max-height: 80px;
+        width: auto;
+        height: auto;
+    }
+    .toplist-pokies .row-award {
+        display: block;
+        font-size: 12px;
+        padding-left: 30px;
+        margin-top: 4px;
+    }
+    .toplist-pokies .row-bonus {
+        padding-left: 0;
+    }
+}
+
+/* Rooster.bet logo size in review cards */
+.rch-logo:has(img[src*="roosterbet"]) {
+    flex: 0 0 80px;
+}
+.rch-logo img[src*="roosterbet"] {
+    max-width: 64px;
+    max-height: 64px;
+}
+@media (max-width: 768px) {
+    .rch-logo img[src*="roosterbet"] {
+        max-width: 48px;
+        max-height: 48px;
+    }
+}
+
+/* ============ Kiwi Stakes — supplementary components (2026 rebuild) ============ */
+.age-banner{background:#1e2a4a;color:#dfe5f2;font-size:.82rem;padding:7px 0;text-align:center;border-bottom:2px solid #f97316}
+.age-banner .age-badge{background:#f97316;color:#1e2a4a;font-weight:800;border-radius:4px;padding:1px 7px;margin-right:6px}
+.age-banner a{color:#f97316;font-weight:700}
+.breadcrumb-nav{background:#f3f4f6;padding:9px 0;font-size:.82rem;color:#667}
+.breadcrumb-nav a{color:#1e2a4a;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}
+.breadcrumb-sep{color:#aab;margin:0 4px}.breadcrumb-current{color:#667}
+.content-layout{display:flex;gap:32px;align-items:flex-start;padding-top:28px}
+.main-col{flex:1 1 auto;min-width:0}
+.sidebar-sticky{flex:0 0 300px;position:sticky;top:90px}
+@media(max-width:991px){.content-layout{display:block}.sidebar-sticky{flex:none;position:static;margin-top:30px}}
+.hero-picks-label{font-weight:800;color:#f97316;text-transform:uppercase;letter-spacing:.5px;font-size:.8rem;margin-bottom:10px}
+.rank-criteria{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:20px 0}
+.criteria-item{background:#fff;border:1px solid #e6e8ef;border-radius:10px;padding:18px}
+.criteria-item h3{font-size:1rem;color:#1e2a4a;margin:0 0 8px}.criteria-item i{color:#f97316;margin-right:6px}
+.payment-list,.signup-steps{line-height:1.7}
+.payment-list li{margin-bottom:8px}
+.pillar-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+.pillar-link{display:flex;align-items:center;gap:10px;background:#1e2a4a;color:#fff;padding:14px 16px;border-radius:8px;text-decoration:none;font-weight:600;transition:.2s}
+.pillar-link:hover{background:#27376180;background:#2c3e6b;color:#f97316;text-decoration:none}
+.pillar-link i{color:#f97316}
+.rating-stars{color:#f97316;font-size:.85rem;margin-top:3px}
+.toplist-cta{display:flex;flex-direction:column;gap:6px;align-items:center}
+.read-full-review{font-size:.78rem;color:#1e2a4a;text-decoration:underline}
+.review-cta-top .btn-claim,.toplist-cta .btn-claim{white-space:nowrap}
+.review-rank{display:inline-block;background:#f97316;color:#1e2a4a;font-weight:800;border-radius:6px;padding:2px 9px;margin-right:8px}
+.review-header-info{display:inline-block;vertical-align:middle}
+.review-quick-stats{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.review-quick-stats .stat-box{background:#f3f4f6;border-radius:8px;padding:10px 14px;min-width:130px}
+.review-quick-stats .stat-label{display:block;font-size:.72rem;color:#778;text-transform:uppercase}
+.review-quick-stats .stat-value{font-weight:700;color:#1e2a4a}
+.table-note{font-size:.78rem;color:#778;margin-top:10px}
+.footer-rg{background:#16213d;color:#aeb6c8;padding:18px 0;font-size:.8rem;line-height:1.6}
+.footer-rg a{color:#f97316}
+.footer-disclaimer{margin-top:8px;color:#8b93a7}
+.footer-nav-row{margin-top:14px}
+.sidebar-top-pick{text-align:center}.sidebar-pick-name{font-weight:800;color:#1e2a4a;margin:8px 0 2px}
+.sidebar-pick-bonus{font-size:.85rem;color:#1d4ed8;font-weight:700;margin-bottom:10px}
+.sidebar-rg{background:#1e2a4a;color:#dfe5f2}.sidebar-rg .sidebar-card-title{color:#f97316}
+.related-pillars{margin-top:30px}
+.logo-fallback{font-weight:800;color:#1e2a4a;font-size:1.05rem}
+.team-odds-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0}
+.team-odds-card{background:#fff;border:1px solid #e6e8ef;border-top:4px solid #f97316;border-radius:10px;padding:16px}
+.team-odds-card h3{font-size:1.05rem;color:#1e2a4a;margin:0 0 6px}
+.market-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:18px 0}
+.market-card{background:#f8f9fa;border-radius:10px;padding:16px;border-left:4px solid #1d4ed8}
+.market-card h3{font-size:1rem;color:#1e2a4a;margin:0 0 6px}
+.key-fact{background:#eff4fc;border-left:4px solid #1d4ed8;border-radius:8px;padding:14px 18px;margin:16px 0}
+.key-fact strong{color:#1e2a4a}
+.contact-form label{display:block;font-weight:600;margin:12px 0 4px;color:#1e2a4a}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border:1px solid #cdd3e0;border-radius:6px;font-family:inherit}
+.contact-form button{margin-top:16px;background:#f97316;color:#1e2a4a;font-weight:800;border:0;border-radius:50px;padding:12px 28px;cursor:pointer}
+
+/* Bootstrap 3 forces html{font-size:10px}, which shrinks the rem-based hero.
+   Restore the browser default so inner pages match the homepage (no Bootstrap). */
+html { font-size: 16px; }
+
+/* ─── Comparison table — corrected table layout (overrides legacy flex rules) ─── */
+.toplist-table { width:100%; border-collapse:collapse; table-layout:auto; background:#fff; }
+.toplist-table thead th { display:table-cell; vertical-align:middle; float:none; text-align:left; padding:14px; }
+.toplist-table tbody td { display:table-cell; vertical-align:middle; float:none; padding:16px 14px; border-bottom:1px solid #f0f0f0; background:#fff; font-size:14px; color:#374151; }
+.toplist-table tbody tr:last-child td { border-bottom:none; }
+.toplist-table tbody tr:hover td { background:#fafbfc; }
+
+.toplist-table .th-rank, .toplist-table .row-rank { width:58px; text-align:center; }
+.toplist-table .th-rating, .toplist-table .row-rating { width:100px; text-align:center; white-space:nowrap; }
+.toplist-table .th-bonus { width:230px; }
+.toplist-table .th-cta, .toplist-table .row-cta { width:150px; text-align:center; }
+
+/* rank circular badge */
+.toplist-table .row-rank { background:none; }
+.toplist-table .row-rank .rank-badge {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:34px; height:34px; border-radius:50%; background:#f0f1f3;
+  font-family:'Montserrat',sans-serif; font-weight:800; font-size:15px; color:#1e2a4a;
+}
+
+/* casino / sportsbook cell: logo + name inline, centred */
+.toplist-table .row-casino { width:auto; min-width:210px; white-space:nowrap; }
+.toplist-table .row-casino-logo {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:110px; height:46px; margin-right:12px; vertical-align:middle;
+}
+.toplist-table .row-casino-logo img,
+.toplist-table .row-casino-logo img[alt] {
+  max-width:110px; max-height:44px; width:auto; height:auto;
+  object-fit:contain; border:0; border-radius:0;
+}
+.toplist-table .row-casino-name {
+  display:inline-block; vertical-align:middle;
+  font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px; color:#111; text-decoration:none;
+}
+.toplist-table .row-casino-name:hover { color:#1d4ed8; }
+.toplist-table .row-bonus { font-weight:600; }
+.toplist-table .row-rating .rating-score { font-weight:800; color:#1e2a4a; margin-right:4px; }
+.toplist-table .row-rating .star, .toplist-table .row-rating .fa { color:#f59e0b; }
+
+@media (max-width:768px) {
+  /* scroll horizontally rather than breaking cells into broken cards */
+  .table-responsive { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .toplist-table { border:1px solid #e2e2e2; min-width:680px; }
+  .toplist-table thead th { display:table-cell; }
+  .toplist-table tbody td { display:table-cell; float:none; padding:12px 10px; font-size:13px; }
+  .toplist-table .row-rating { float:none; }
+  .toplist-table .row-bonus::before { content:""; }
+  .toplist-table .row-casino-logo { width:92px; height:38px; margin-right:8px; }
+  .toplist-table .row-casino-logo img { max-width:92px; max-height:36px; }
+  .toplist-table .btn-claim { display:inline-block; width:auto; }
+}
