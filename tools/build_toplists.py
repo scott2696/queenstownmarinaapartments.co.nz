@@ -261,40 +261,51 @@ RANK_BADGE = ["Editor's #1 Pick", '#2 Pick', '#3 Pick', '#4 Pick', '#5 Pick']
 def review_card(op, url, rank):
     """Operator review card.
 
-    Deliberately carries no welcome-offer, licence, min-deposit, games or
-    pros/cons detail: none of that has been supplied for this lineup, and
-    those are checkable factual claims a reader would act on financially.
-    Restore review-highlights / review-pros-cons here once real data exists.
+    Detail (highlights, pros/cons, review body) is rendered by
+    _review_detail only from data actually supplied for the operator.
+    Operators with no offer data get a plain statement saying so - those
+    fields are checkable factual claims and are never invented.
     """
     name = op['name'].replace('&', '&amp;')
     href = url.replace('&', '&amp;')
     if op.get('logo'):
-        # header is a dark gradient; these logos are dark artwork, so the
-        # mark sits on its own white tile
-        logo = (f'<span style="display:inline-flex;align-items:center;'
-                f'justify-content:center;background:#fff;border-radius:8px;'
-                f'width:76px;height:44px;padding:5px;flex-shrink:0">'
-                f'<img src="/logos/{op["logo"]}" alt="{name} logo" loading="lazy" '
-                f'style="width:100%;height:100%;object-fit:contain"></span>')
+        # header is a dark gradient and these logos are dark artwork,
+        # so the mark sits on its own white tile
+        logo = ('<span style="display:inline-flex;align-items:center;'
+                'justify-content:center;background:#fff;border-radius:8px;'
+                'width:76px;height:44px;padding:5px;flex-shrink:0">'
+                f'<img src="/logos/{op["logo"]}" alt="{name} logo" '
+                'loading="lazy" '
+                'style="width:100%;height:100%;object-fit:contain"></span>')
     else:
         logo = ''
     badge = RANK_BADGE[rank - 1] if rank <= len(RANK_BADGE) else f'#{rank} Pick'
-    return (
-        '<div class="review-card">'
-        '<div class="review-header"><div class="review-header-left">'
-        f'{logo}<h3>{name} Review</h3>'
-        f'<span class="review-badge">{badge}</span>'
-        '</div>'
-        f'<a href="{href}" class="btn-claim" rel="nofollow sponsored noopener" '
-        f'target="_blank">Visit {name}</a>'
-        '</div>'
-        '<div class="review-body>'.replace('>', '">')
-        + (_review_detail(op) if op.get('offer') else
-           f'<p>{name} is part of our current New Zealand lineup. Our full '
-           'assessment is not published yet, so we make no claims about its '
-           "terms here. Check the operator's site for current details before "
-           'you deposit.</p>')
-        + '</div></div>')
+
+    if op.get('offer'):
+        body = _review_detail(op)
+    else:
+        body = (f'<p>{name} is part of our current New Zealand lineup. Our '
+                'full assessment is not published yet, so we make no claims '
+                "about its terms here. Check the operator's site for current "
+                'details before you deposit.</p>')
+
+    parts = [
+        '<div class="review-card">',
+        '<div class="review-header">',
+        '<div class="review-header-left">',
+        logo,
+        f'<h3>{name} Review</h3>',
+        f'<span class="review-badge">{badge}</span>',
+        '</div>',
+        f'<a href="{href}" class="btn-claim" rel="nofollow sponsored noopener"'
+        f' target="_blank">Visit {name}</a>',
+        '</div>',
+        '<div class="review-body">',
+        body,
+        '</div>',
+        '</div>',
+    ]
+    return ''.join(parts)
 
 
 def _review_detail(op):
