@@ -131,9 +131,13 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--head); color: var(--text); letter-sp
 .hero-featured-body { padding: 1.6rem; text-align: center; }
 .hero-featured-head { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
 .hero-featured-mark { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: var(--nav); color: var(--yellow); border-radius: 10px; font-size: 1.4rem; flex-shrink: 0; }
-.hero-featured-name { font-family: var(--head); font-weight: 800; font-size: 1.3rem; color: #111; margin: 0; text-align: left; }
-.hero-featured-pick { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: .72rem; letter-spacing: .04em; margin: 0; text-align: left; }
-.hero-featured-bonus { font-family: var(--serif); font-weight: 800; font-size: 1.7rem; color: #111; margin: .4rem 0; line-height: 1.1; }
+/* centred head with the operator logo in its own bordered tile */
+.hero-featured-head { justify-content: center; }
+.hero-featured-logo { display:inline-flex; align-items:center; justify-content:center; width:104px; height:58px; padding:7px; background:#fff; border:1px solid var(--border); border-radius:10px; box-shadow:0 1px 3px rgba(16,36,72,.10); flex-shrink:0; }
+.hero-featured-logo img { width:100%; height:100%; object-fit:contain; display:block; }
+.hero-featured-name { font-family: var(--head); font-weight: 800; font-size: 1.3rem; color: #111; margin: 0; text-align: center; }
+.hero-featured-pick { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: .72rem; letter-spacing: .04em; margin: 0; text-align: center; }
+.hero-featured-bonus { font-family: var(--serif); font-weight: 800; font-size: 1.4rem; color: #111; margin: .5rem 0 .35rem; line-height: 1.15; text-wrap: balance; }
 .hero-featured-detail { color: #555; font-size: .85rem; margin-bottom: 1.1rem; }
 .hero-featured .btn-primary { display: block; }
 .hero-featured-fine { color: #999; font-size: .72rem; margin-top: .9rem; }

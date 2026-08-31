@@ -191,15 +191,11 @@ def hero_card(op, url, cat):
     name = op['name'].replace('&', '&amp;')
     href = url.replace('&', '&amp;')
     if op.get('logo'):
-        # the mark tile is dark navy by default; our logos are dark artwork,
-        # so the tile is overridden to white here or they would not read
-        # tile is 48x48 by default, but most of these marks are wide wordmarks
-        # (Spinjo is 3.2:1) which object-fit would shrink to a sliver, so the
-        # tile is widened and the dark navy swapped for white
-        mark = (f'<span class="hero-featured-mark" style="background:#fff;padding:6px;'
-                f'width:96px;height:52px;border-radius:10px;flex-shrink:0">'
-                f'<img src="/logos/{op["logo"]}" alt="{name} logo" loading="lazy" '
-                f'style="width:100%;height:100%;object-fit:contain"></span>')
+        # own bordered tile so the mark reads as a box on the white card;
+        # sized for wide wordmarks rather than the stock 48x48 square
+        mark = (f'<span class="hero-featured-logo">'
+                f'<img src="/logos/{op["logo"]}" alt="{name} logo" loading="lazy">'
+                f'</span>')
     else:
         mark = '<span class="hero-featured-mark">&#9733;</span>'
     return (
