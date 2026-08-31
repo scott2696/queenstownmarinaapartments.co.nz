@@ -83,7 +83,7 @@
    "rating": null,
    "hold": null,
    "note": "Casino=TRUE with no casino link; falls back to the betting link, matching the shared-link pattern used by Lucky Vibe, Fortune Play, Roby and others.",
-   "logo": null
+   "logo": "rooster-bet.png"
   },
   {
    "name": "Fortune Play",
@@ -97,7 +97,7 @@
    "rating": null,
    "hold": null,
    "note": null,
-   "logo": null
+   "logo": "fortune-play.png"
   },
   {
    "name": "SpinsUp",
