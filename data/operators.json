@@ -100,22 +100,6 @@
    "logo": "fortune-play.png"
   },
   {
-   "name": "SpinsUp",
-   "slug": "spinsup",
-   "casino": true,
-   "sports": false,
-   "crypto": false,
-   "casinoLink": "https://mediaroosters.com/aaud6h1mdk",
-   "bettingLink": "",
-   "offer": "",
-   "rating": null,
-   "hold": {
-    "all": "Link is byte-identical to Fortune Play's - clicks would credit the wrong campaign. Needs its own URL."
-   },
-   "note": "HELD: link is byte-identical to Fortune Play's, so a visitor clicking SpinsUp lands on Fortune Play. Needs its own URL.",
-   "logo": null
-  },
-  {
    "name": "MadCasino",
    "slug": "madcasino",
    "casino": true,
