@@ -372,6 +372,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--head); color: var(--text); letter-sp
   .shell-ribbon { font-size: .72rem; }
   .shell-ribbon-inner { flex-wrap: nowrap; justify-content: center; gap: 0; padding: .5rem .8rem; white-space: nowrap; }
   .shell-ribbon-inner > span:first-child { overflow: hidden; text-overflow: ellipsis; }
-  .shell-ribbon-secondary { display: none; }
+  /* disclosure must stay visible on mobile - it is now the only one on the page */
+  .shell-ribbon-secondary { display: block; width: 100%; text-align: center; font-size: .72rem; margin-top: 2px; }
   .rib-hide-sm { display: none; }
 }

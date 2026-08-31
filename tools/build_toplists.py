@@ -21,9 +21,8 @@ crypto-casinos/no-kyc""".split()
 SPORTS_PAGES = ['sports-betting', 'sports-betting/tab-review']
 
 SPORTS_HEADING = 'Top Sports Betting Sites for NZ Players'
-SPORTS_INTRO = ('<strong>We may earn a commission</strong> from the operators below; '
-                'offer specifics are not yet confirmed, so verify current terms on each '
-                'site. See our <a href="/review-methodology/">review methodology</a>.')
+SPORTS_INTRO = ('Offers change often, so verify current terms on each site. '
+                'See our <a href="/review-methodology/">review methodology</a>.')
 
 DEFAULT_OFFER = "Visit site for current offer"
 
@@ -143,8 +142,7 @@ def rewrite(page, cat):
     # the placeholder disclaimer is no longer true once real links ship
     html = re.sub(
         r'<strong>Offers and links (?:below )?are placeholders</strong>[^<]*',
-        '<strong>We may earn a commission</strong> from the operators below. '
-        'This never affects our rankings, which follow our '
+        'Offers change often. Rankings follow our '
         '<a href="/review-methodology/">review methodology</a>. '
         'Verify current terms on each site. ',
         html)
