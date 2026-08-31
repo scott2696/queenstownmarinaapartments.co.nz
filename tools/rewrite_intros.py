@@ -99,7 +99,7 @@ for f, new in INTROS.items():
     if not ps:
         print('  no intro <p>:', f); continue
     last = ps[-1]
-    h = h[:last.start()] + f'<p>{new}</p>' + h[last.end():]
+    h = h[:last.start()] + f'<p class="toplist-intro">{new}</p>' + h[last.end():]
     p.write_text(h, encoding='utf-8')
     changed += 1
 print('intros rewritten:', changed)

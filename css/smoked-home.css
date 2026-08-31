@@ -420,6 +420,10 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--head); color: var(--text); letter-sp
   .hero-byline-name { font-size: .82rem; margin: .05rem 0 0; line-height: 1.25; }
   .hero-byline-meta { font-size: .65rem; line-height: 1.4; text-align: left; }
   .hero-byline-quote { display: none; }
+  /* the H2 stays; its intro paragraph is hidden so the table follows
+     the heading directly on a phone */
+  .toplist-intro { display: none; }
+
   /* bring the table and its heading up */
   .section { padding-top: 1.1rem; }
   #toplist { padding-top: .8rem; }
