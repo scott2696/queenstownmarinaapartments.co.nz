@@ -63,6 +63,14 @@ def card(op, url, rank):
     name = op['name'].replace('&', '&amp;')
     href = url.replace('&', '&amp;')
     offer = (op['offer'] or DEFAULT_OFFER).replace('&', '&amp;')
+    # brand mark: real logo where we have one, styled wordmark otherwise
+    if op.get('logo'):
+        mark = (f'<img src="/logos/{op["logo"]}" alt="{name} logo" loading="lazy" '
+                f'decoding="async">')
+    else:
+        mark = (f'<span style="font-weight:800;color:#16233a;font-size:.8rem;'
+                f'text-align:center;line-height:1.1">{name}</span>')
+
     stars = ''
     if op.get('rating'):
         full = int(op['rating'])
@@ -73,8 +81,7 @@ def card(op, url, rank):
         f'<div class="toplist-item" id="{op["slug"]}">'
         f'<div class="toplist-rank">{rank}</div>'
         f'<div class="toplist-logo-wrap"><div class="toplist-logo">'
-        f'<span style="font-weight:800;color:#16233a;font-size:.8rem;'
-        f'text-align:center;line-height:1.1">{name}</span></div>{stars}</div>'
+        f'{mark}</div>{stars}</div>'
         f'<div class="toplist-info"><div class="toplist-name">{name}</div>'
         f'<div class="toplist-bonus">{offer}</div></div>'
         f'<div class="toplist-cta"><a href="{href}" class="btn-play" '
