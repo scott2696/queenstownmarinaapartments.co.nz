@@ -59,10 +59,17 @@ def lineup(cat):
     return out
 
 
-def card(op, url, rank):
+def offer_for(op, cat):
+    """Sports pages show the sportsbook offer where one exists."""
+    if cat == 'sports' and op.get('offerSports'):
+        return op['offerSports']
+    return op.get('offer') or DEFAULT_OFFER
+
+
+def card(op, url, rank, cat='casino'):
     name = op['name'].replace('&', '&amp;')
     href = url.replace('&', '&amp;')
-    offer = (op['offer'] or DEFAULT_OFFER).replace('&', '&amp;')
+    offer = offer_for(op, cat).replace('&', '&amp;')
     # brand mark: real logo where we have one, styled wordmark otherwise
     if op.get('logo'):
         mark = (f'<img src="/logos/{op["logo"]}" alt="{name} logo" loading="lazy" '
@@ -73,9 +80,13 @@ def card(op, url, rank):
 
     stars = ''
     if op.get('rating'):
-        full = int(op['rating'])
+        r = float(op['rating'])
+        full = int(r)
+        half = (r - full) >= 0.5
         stars = ('<div class="toplist-stars">'
                  + '<span class="star">&#9733;</span>' * full
+                 + ('<span class="star half">&#9733;</span>' if half else '')
+                 + '<span class="star empty">&#9733;</span>' * (5 - full - (1 if half else 0))
                  + '</div>')
     return (
         f'<div class="toplist-item" id="{op["slug"]}">'
@@ -105,7 +116,7 @@ def rewrite(page, cat):
     if not path.exists():
         print(f'  MISSING {page}'); return 0
     html = path.read_text(encoding='utf-8')
-    cards = ''.join(card(op, u, i) for i, (op, u) in enumerate(lineup(cat), 1))
+    cards = ''.join(card(op, u, i, cat) for i, (op, u) in enumerate(lineup(cat), 1))
 
     # match the container with any attributes (some carry id="toplist") and
     # reuse the original opening tag so ids survive a rebuild
@@ -201,8 +212,13 @@ def hero_card(op, url, cat):
         f'<p class="hero-featured-name">{name}</p>'
         f'<p class="hero-featured-pick">{PICK_LABEL[cat]}</p>'
         '</div></div>'
-        '<p class="hero-featured-detail">Offer terms are not yet confirmed &mdash; '
-        'check the current offer on site.</p>'
+        + (f'<p class="hero-featured-bonus">{offer_for(op, cat)}</p>'
+           f'<p class="hero-featured-detail">Min deposit {op["minDeposit"]}'
+           + (f' &middot; {op["wagering"]} wagering' if op.get('wagering') and op['wagering'] not in ('—','None') else '')
+           + '. Verify current terms on site.</p>'
+           if op.get('offer') else
+           '<p class="hero-featured-detail">Offer terms are not yet confirmed &mdash; '
+           'check the current offer on site.</p>') +
         f'<a href="{href}" class="btn-primary" style="display:block;text-align:center" '
         f'rel="nofollow sponsored noopener" target="_blank">Play at {name} &rarr;</a>'
         '<p class="hero-featured-fine">18+ &middot; T&amp;Cs apply &middot; '
@@ -272,13 +288,36 @@ def review_card(op, url, rank):
         f'<a href="{href}" class="btn-claim" rel="nofollow sponsored noopener" '
         f'target="_blank">Visit {name}</a>'
         '</div>'
-        '<div class="review-body">'
-        f'<p>{name} is part of our current New Zealand lineup. Our full '
-        'assessment &mdash; welcome offer, licensing, banking and game range '
-        '&mdash; is not published yet, so we make no claims about its terms '
-        "here. Check the operator's site for current details before you "
-        'deposit.</p>'
-        '</div></div>')
+        '<div class="review-body>'.replace('>', '">')
+        + (_review_detail(op) if op.get('offer') else
+           f'<p>{name} is part of our current New Zealand lineup. Our full '
+           'assessment is not published yet, so we make no claims about its '
+           "terms here. Check the operator's site for current details before "
+           'you deposit.</p>')
+        + '</div></div>')
+
+
+def _review_detail(op):
+    """Highlights + pros/cons, rendered only from supplied data."""
+    e = lambda t: str(t).replace('&', '&amp;')
+    out = []
+    if op.get('body'):
+        out.append(f'<p>{e(op["body"])}</p>')
+    hl = [('Welcome Bonus', op.get('offer')), ('Wagering', op.get('wagering')),
+          ('Min Deposit', op.get('minDeposit'))]
+    cells = ''.join(f'<div class="review-highlight"><strong>{k}</strong>{e(v)}</div>'
+                    for k, v in hl if v and v not in ('—',))
+    if cells:
+        out.append(f'<div class="review-highlights">{cells}</div>')
+    pros, cons = op.get('pros') or [], op.get('cons') or []
+    if pros or cons:
+        pl = ''.join(f'<li>{e(x)}</li>' for x in pros)
+        cl = ''.join(f'<li>{e(x)}</li>' for x in cons)
+        out.append('<div class="review-pros-cons">'
+                   f'<div class="review-pros"><h4>Pros</h4><ul>{pl}</ul></div>'
+                   f'<div class="review-cons"><h4>Cons</h4><ul>{cl}</ul></div>'
+                   '</div>')
+    return ''.join(out)
 
 
 def rebuild_reviews(page, cat):
