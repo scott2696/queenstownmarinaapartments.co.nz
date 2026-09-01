@@ -216,22 +216,22 @@
    "crypto": true,
    "casinoLink": "https://go.afftrackio.com/visit/?bta=36498&nci=5371",
    "bettingLink": "https://go.afftrackio.com/visit/?bta=36498&nci=5371",
-   "offer": "777% to €7,500 (≈NZ$14,700)",
+   "offer": "777% to NZ$14,700",
    "rating": null,
    "hold": null,
    "note": "Link updated 2026-09-01.",
    "logo": "madcasino.png",
-   "offerSource": "Supplied by owner 2026-09-01 in EUR. NZD figures are indicative only, converted at 1 EUR = 1.96 NZD on 2026-09-01 — not a published NZD cap. Replace if MadCasino publishes its own NZD amounts.",
-   "offerSports": "250% to €3,500 (≈NZ$6,860)",
-   "body": "MadCasino runs the largest headline package in our lineup — a staged 777% welcome across the slots side, plus a separate 250% sportsbook offer. Both are denominated in euros rather than NZD, so your balance converts at the cashier's rate.",
+   "offerSource": "Supplied by owner 2026-09-01 in EUR. NZD figures are indicative only, converted at 1 EUR = 1.96 NZD on 2026-09-01 - not a published NZD cap. Replace if the operator publishes its own NZD amounts.",
+   "offerSports": "250% to NZ$6,860",
+   "body": "MadCasino pairs a staged 777% slots package with a separate 250% sportsbook offer, both on one account. Amounts shown are converted from the operator's euro pricing.",
    "pros": [
-    "Largest headline package in our lineup",
     "Separate casino and sportsbook welcome offers",
-    "Casino and sports on one account"
+    "Casino and sports on one account",
+    "Large headline package across staged deposits"
    ],
    "cons": [
     "Offers are in euros, not NZD — conversion applies",
-    "Very high headline percentages usually mean staged deposits",
+    "Headline total is spread across several deposits",
     "Offshore licence only"
    ]
   },
@@ -243,12 +243,24 @@
    "crypto": true,
    "casinoLink": "https://go.afftrackio.com/visit/?bta=36498&nci=5356",
    "bettingLink": "https://go.afftrackio.com/visit/?bta=36498&nci=5356",
-   "offer": "",
+   "offer": "600% to NZ$18,620",
    "rating": null,
    "hold": null,
    "note": "Link updated 2026-09-01.",
    "logo": "kingdom.png",
-   "offerSource": "11woodward.co.nz research, NZ-targeted; re-verify before launch"
+   "offerSource": "Supplied by owner 2026-09-01 in EUR. NZD figures are indicative only, converted at 1 EUR = 1.96 NZD on 2026-09-01 - not a published NZD cap. Replace if the operator publishes its own NZD amounts.",
+   "offerSports": "200% to NZ$1,960",
+   "body": "Kingdom runs a 600% staged slots package alongside a smaller 200% sportsbook offer. Amounts shown are converted from the operator's euro pricing.",
+   "pros": [
+    "One of the larger slots packages in our lineup",
+    "Separate sportsbook offer",
+    "Casino and sports on one account"
+   ],
+   "cons": [
+    "Offers are in euros, not NZD — conversion applies",
+    "Headline total is spread across several deposits",
+    "Offshore licence only"
+   ]
   },
   {
    "name": "Smash",
@@ -258,12 +270,24 @@
    "crypto": true,
    "casinoLink": "https://go.afftrackio.com/visit/?bta=36498&nci=5376",
    "bettingLink": "https://go.afftrackio.com/visit/?bta=36498&nci=5376",
-   "offer": "",
+   "offer": "600% to NZ$19,600",
    "rating": null,
    "hold": null,
    "note": "Link updated 2026-09-01.",
    "logo": "smash.png",
-   "offerSource": "11woodward.co.nz research, NZ-targeted; re-verify before launch"
+   "offerSource": "Supplied by owner 2026-09-01 in EUR. NZD figures are indicative only, converted at 1 EUR = 1.96 NZD on 2026-09-01 - not a published NZD cap. Replace if the operator publishes its own NZD amounts.",
+   "offerSports": "250% to NZ$9,800",
+   "body": "Smash carries the largest combined welcome in our lineup — a 600% slots package plus a 250% sportsbook offer worth more than most rivals' casino bonus on its own. Amounts shown are converted from the operator's euro pricing.",
+   "pros": [
+    "Largest combined casino and sports welcome in our lineup",
+    "Substantial standalone sportsbook offer",
+    "Casino and sports on one account"
+   ],
+   "cons": [
+    "Offers are in euros, not NZD — conversion applies",
+    "Headline total is spread across several deposits",
+    "Offshore licence only"
+   ]
   },
   {
    "name": "Rivo",
@@ -273,12 +297,24 @@
    "crypto": true,
    "casinoLink": "https://go.afftrackio.com/visit/?bta=36498&nci=5387",
    "bettingLink": "https://go.afftrackio.com/visit/?bta=36498&nci=5387",
-   "offer": "",
+   "offer": "1000% to NZ$19,600",
    "rating": null,
    "hold": null,
    "note": "Link updated 2026-09-01.",
    "logo": "rivo.png",
-   "offerSource": "11woodward.co.nz research, NZ-targeted; re-verify before launch"
+   "offerSource": "Supplied by owner 2026-09-01 in EUR. NZD figures are indicative only, converted at 1 EUR = 1.96 NZD on 2026-09-01 - not a published NZD cap. Replace if the operator publishes its own NZD amounts.",
+   "offerSports": "100% to NZ$980",
+   "body": "Rivo posts the highest headline percentage here at 1000% across its slots package, though the sportsbook side is modest by comparison. Amounts shown are converted from the operator's euro pricing.",
+   "pros": [
+    "Highest headline percentage in our lineup",
+    "Casino and sports on one account",
+    "Straightforward 100% sports match"
+   ],
+   "cons": [
+    "Offers are in euros, not NZD — conversion applies",
+    "Headline total is spread across several deposits",
+    "Offshore licence only"
+   ]
   },
   {
    "name": "Roby Casino",
