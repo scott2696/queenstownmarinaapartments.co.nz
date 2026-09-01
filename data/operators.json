@@ -67,12 +67,12 @@
    "crypto": true,
    "casinoLink": "",
    "bettingLink": "https://betandplay.partners/jtukqxlzl",
-   "offer": "50% to NZ$300 free bet (code SPORT)",
+   "offer": "50% to NZ$300 free bet",
    "rating": 4.7,
    "hold": null,
    "note": null,
    "logo": "bet-and-play.png",
-   "offerSports": "50% to NZ$300 free bet (code SPORT)",
+   "offerSports": "50% to NZ$300 free bet",
    "minDepositSports": "NZ$30",
    "wagering": "—",
    "minDeposit": "NZ$30",
@@ -134,7 +134,7 @@
    "logo": "lucky-vibe.jpg",
    "wagering": "40×",
    "minDeposit": "NZ$30",
-   "offerSports": "50% free bet to NZ$250 (SPORTS1/SPORTS2)",
+   "offerSports": "50% free bet to NZ$250",
    "minDepositSports": "NZ$30",
    "pros": [
     "One login for casino, live and sports",
@@ -166,7 +166,7 @@
    "offerSource": "competitor research (whollysmoked.co.nz), NZ-targeted; VERIFY with affiliate manager",
    "wagering": "40×",
    "minDeposit": "NZ$20",
-   "body": "Rooster Bet spreads its welcome across four deposits, each needing its own code (ROOSTER1-4), for a headline package of NZ$5,000 and 300 free spins. Balances are held in NZD and six cryptocurrencies are supported.",
+   "body": "Rooster Bet spreads its welcome across four deposits for a headline package of NZ$5,000 and 300 free spins. Balances are held in NZD and six cryptocurrencies are supported.",
    "pros": [
     "NZD balances",
     "Four-stage welcome package",
@@ -175,7 +175,7 @@
    ],
    "cons": [
     "40× wagering across all four stages",
-    "Each stage needs its own promo code",
+    "Each deposit stage must be claimed separately",
     "Offshore licence only"
    ]
   },
